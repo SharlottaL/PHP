@@ -1,6 +1,6 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/header.php';
-echo "Привет, {$_POST['first_name']} {$_POST['last_name']}, приятного прохождения ;-)";
+echo "Hello, {$_POST['first_name']} {$_POST['last_name']}";
 echo '<pre>';
 print_r(ROOT . "\n");
 echo $_SERVER['DOCUMENT_ROOT'];
@@ -20,7 +20,7 @@ echo '</pre>';
 		<?php endfor ?>
 	</div>
 	<div>
-	<input type="submit" value="Отправить" >
+		<input type="submit" value="Отправить" />
 	</div>
 </form>
 

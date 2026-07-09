@@ -7,7 +7,7 @@ require_once __DIR__ . '/data.php';
 <head>
     <meta charset="utf-8" />
     <title><?= $title ?></title>
-	<link rel="stylesheet" href="http://localhost:8080/04-Quitz/css/login.css">
-	<link rel="stylesheet" href="http://localhost:8080/04-Quitz/css/quitz.css">
+	<link rel="stylesheet" href="/04-Quitz/css/login.css">
+    <link rel="stylesheet" href="/04-Quitz/css/quitz.css">
 </head>
 <body>

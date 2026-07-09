@@ -9,6 +9,8 @@ require_once __DIR__ . '/header.php';
 $asked_questions = array_keys($_POST);
 $user_answers = array_values($_POST);
 $score = 0;
+$not_correct_answers = 0;
+
 for($i = 0; $i < count($user_answers); $i++)
 {
    // $answer = explode('_', $user_answers[$i])[1];
@@ -16,10 +18,23 @@ for($i = 0; $i < count($user_answers); $i++)
    // echo $answer;
     if ($answer == $correct_answers[$i])
         $score++;
-}
-echo '<div class="result">';
-echo "Количество правильных ответов: {$score}";
-echo '</div>';
+    else
+        $not_correct_answers++;
 
+}
+$score_message = "Количество правильных ответов: {$score}, неправильных: {$not_correct_answers}";
+$receipient = 'botanichkagigantika@gmail.com';
+$sender = 'PHPtest@PD411.academy';
+//$headers[] = 'MINE-Version 1.0';
+//$headers[] = 'Content-type: text/html;charset=utf-8';
+//$headers[] = "To: {$receipient}";
+$headers = "From: {$sender}\r\n";
+
+echo '<div class="result">';
+echo $score_message;
+echo '<br>';
+mail($receipient, 'Результаты тестирования',
+    $score_message, $headers);
+echo '</div>';
 require_once __DIR__ . '/footer.php';
 ?>
