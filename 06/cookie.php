@@ -7,40 +7,19 @@ if (isset($_COOKIE['return'])) {
 } else {
     setcookie('return', '1', time() + 300);
 }
-
-echo $visitor ? 'Welcome back' : 'Hello';
 ?>
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>Cookies and Session </title>
+    <title>Cookies</title>
 </head>
 <body>
-    <h1>Cookies & Session</h1>
-    HTTP-request
-    <ul>
-        <li><a href="cookie.php">Cookie</a></li>
-    </ul>
-    <h2>Cookie</h2>
-    <pre>
-    bool setcookie
-    (
-    string $name, 
-    string $value,
-    int $expires,
-    string $path,
-    string $domain,
-    bool $secure,
-    bool $httponly
-    );
-
-    $_COOKIE['name'];
-    if(isset($_COOKIE['name']))
-    {
-    //
-    }
-</pre>
+    <h1>Cookies</h1>
+   <h2> 
+    <?= $visitor ? 'Welcome back' : 'Hello';?>
+   </h2>
+    <img src="CODEPAGE.phg" style="width:800px;height:600px;"/>
 </body>
 </html>
