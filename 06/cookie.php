@@ -20,6 +20,24 @@ if (isset($_COOKIE['return'])) {
    <h2> 
     <?= $visitor ? 'Welcome back' : 'Hello';?>
    </h2>
+    <button onclick='ResetCookies()'>Сбросить</button>
     <img src="CODEPAGE.phg" style="width:800px;height:600px;"/>
+
+    <script>
+        function ResetCookies()
+        {
+            let request = new XMLHttpRequest();
+            request.onreadystatechange = function()
+            {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    alert(this.responseText);
+                }
+                
+            }
+           request.open("GET", "reset_cookies.php", true);
+           request.send();
+        }
+    </script>
 </body>
 </html>
