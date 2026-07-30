@@ -1,17 +1,18 @@
 <?php
 //phpinfo();
+require_once __DIR__ . '/connect.php';
+require_once __DIR__ . '/create_table_row.php';
+require_once __DIR__ . '/create_table_header.php';
 
-$server_name = "Botan\SQLEXPRESS";
-$connection_info = array("DataBase" => "PD_321", "UID" => "PHP", "PWD" => "111", "CharacterSet" => "UTF-8");
-$connection = sqlsrv_connect($server_name, $connection_info);
 
-var_dump($connection);
 
-$table_header = '<table><tr><th>ID</th><th>Naprav ob </tr></th>';
+$table_header = create_table_header($results);
+//$table_header = '<table><tr><th>ID</th><th>Naprav ob </tr></th>';
 
 $query = "SELECT * FROM Directions";
 $results = sqlsrv_query($connection, $query);
-
+create_table_header($results);
+var_dump($results);
 print_r($results);
 
 echo '<table>';
@@ -45,6 +46,5 @@ $table = "{$table_header}{$table_body}{$table_footer}";
 echo $table;
 //echo '</tr>';
 //echo '</table>';
-sqlsrv_free_stmt($results);
-sqlsrv_close($connection);
+require_once __DIR__ . '/disconnect.php';
 ?>
