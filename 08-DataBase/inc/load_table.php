@@ -3,7 +3,12 @@
 require_once __DIR__ . '/connect.php';
 require_once __DIR__ . '/assembly_table.php';
 
-$query = file_get_contents(__DIR__ . '/../SQL/groups.sql');
+echo '<pre>';
+print_r($_GET);
+print_r($_REQUEST);
+echo '</pre>';
+
+$query = file_get_contents(__DIR__ . '/../SQL/' . $_REQUEST['q']);
 //"
 //    SELECT
 //            group_id		AS	N'ID',

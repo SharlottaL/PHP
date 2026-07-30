@@ -3,25 +3,24 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../css/style.css"/>
+	<link rel="stylesheet" href="../css/style.css">
     <title>Groups</title>
 </head>
 <body>
     <h1>Groups</h1>
-    <!--<table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Название</th>
-                <th>Количество студентов</th>
-                <th>Направление обучения</th>
+	<!--
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Название</th>
+				<th>Количество студентов</th>
+				<th>Направление обечения</th>
+			</tr>
+		</thead>
 
-            </tr>
-          
-        </thead>
-    </table>-->
-      <?php
-      require_once __DIR__ . '/get_groups.php';
-      ?>
+	</table>
+	-->
+			<?php require_once __DIR__ . '/get_groups.php'; ?>
 </body>
 </html>

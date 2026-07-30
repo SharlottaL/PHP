@@ -1,16 +1,46 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style.css">
     <title>DataBase</title>
 </head>
-<body>
+<body onload="getNavMenu()">
+	<nav></nav>
     <h1>DataBase</h1>
-    <ol>
-        <li><a href="inc/main.php"/>Main</li>
-        <li><a href="inc/groups.php"/>Groups</li>
-    </ol>
+	<div id="table"></div>
+	<!--<ol>
+		<li><a href="inc/main.php">Main</a></li>
+		<li><a href="inc/groups.php">Groups</a></li>
+	</ol>-->
+	<script>
+		function getNavMenu()
+		{
+			let request = new XMLHttpRequest();
+			request.onreadystatechange = function ()
+			{
+				if (this.readyState == 4 && this.status == 200)
+				{
+					document.getElementsByTagName('nav')[0].innerHTML = this.responseText;
+				}
+			}
+			request.open("GET", "inc/nav.php", true);
+			request.send();
+		}
+		function loadTable(e)
+		{
+			let request = new XMLHttpRequest();
+			request.onreadystatechange = function ()
+			{
+				if (this.readyState == 4 && this.status == 200)
+				{
+					document.getElementById("table").innerHTML = this.responseText;
+				}
+			}
+			request.open("GET", `inc/load_table.php?q=${e.target.id}`, true);
+			request.send();
+		}
+	</script>
 </body>
 </html>
