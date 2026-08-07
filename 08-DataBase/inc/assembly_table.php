@@ -2,7 +2,7 @@
 require_once __DIR__ . '/create_table_header.php';
 require_once __DIR__ . '/create_table_row.php';
 
-function assembly_table($results)
+function asembly_table($results)
 {
     $table_header = create_table_header($results);
     $table_footer = '</tr></table>';

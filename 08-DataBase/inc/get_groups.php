@@ -20,7 +20,7 @@ echo $query;
 echo '</pre>';
 
 $results = sqlsrv_query($connection, $query);
-echo assembly_table($results);
+echo asembly_table($results);
 
 /*
 echo '<tbody>';
